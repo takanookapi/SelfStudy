@@ -13,10 +13,10 @@
         <h1 class="grid-6"><a href="/">SelfStudy</a></h1>
           <% if user_signed_in? %>
             <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
+          <span><%= current_user.name %>
             <ul class="user__info">
               <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "時間記録", "/" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </li>
             </ul>
@@ -34,7 +34,7 @@
     <%= yield %>
     <footer>
       <p>
-        Copyright SelfStudy 2019.
+        Copyright SelfStudy 2020.
       </p>
     </footer>
   </body>
