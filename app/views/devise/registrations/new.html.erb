@@ -32,9 +32,29 @@
         <%= f.check_box :password_reveal %>
       </div>
 
+      
+
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
+
+<script>
+
+  var password = document.getElementById('user_password');
+  var password_confirmation = document.getElementById('user_password_confirmation');
+  var passwordCheck = document.getElementById('user_password_reveal');
+    passwordCheck.addEventListener('change', function() {
+      if (passwordCheck.checked) {
+        password.setAttribute('type', 'text');
+        password_confirmation.setAttribute('type', 'text');
+      } else {
+        password.setAttribute('type', 'password');
+        password_confirmation.setAttribute('type', 'password');
+      }
+    }, false);
+    
+</script>
+
   </div>
 </div>
