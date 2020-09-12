@@ -18,7 +18,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_reveal %>
+        <%= f.label :password_reveal %><br />
         <%= f.check_box :password_reveal %>
       </div>
 
@@ -26,5 +26,20 @@
         <%= f.submit "Log in" %>
       </div>
     <% end %>
+
+<script>
+
+  const password = document.getElementById('user_password');
+  const passwordCheck = document.getElementById('user_password_reveal');
+    passwordCheck.addEventListener('change', function() {
+      if (passwordCheck.checked) {
+        password.setAttribute('type', 'text');
+      } else {
+        password.setAttribute('type', 'password');
+      }
+    }, false);
+    
+</script>
+    
   </div>
 </div>
