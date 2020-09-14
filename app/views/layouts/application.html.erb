@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
     <title>SelfStudy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +13,7 @@
     <header class="header" id="abc">
       <div class="header__bar row"> 
         <h1 class="grid-6"><a href="/">SelfStudy</a></h1> 
-          <input id="btn-mode" type="checkbox" checked="checked">ダークモード       
+      <input id="btn-mode" type="checkbox" checked="checked">ダークモード
           <% if user_signed_in? %>
             <div class="user_nav grid-6">
           <span><%= current_user.name %>

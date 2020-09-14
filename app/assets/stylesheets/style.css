@@ -597,44 +597,6 @@ ul li {
   clear: both;
 }
 
-@media only screen and (max-width: 40em) {
-
-  .row {
-    width: 100%;
-    padding: 0 20px !important;
-  }
-
-  .row .grid-1,
-  .row .grid-2,
-  .row .grid-3,
-  .row .grid-4,
-  .row .grid-5,
-  .row .grid-6,
-  .row .grid-7,
-  .row .grid-8,
-  .row .grid-9,
-  .row .grid-10,
-  .row .grid-11,
-  .row .grid-12 {
-    float: none;
-    width: 100% !important;
-    margin: 0 !important;
-    position: static !important;
-  }
-}
-
-/* max-width 640px, mobile-only styles, use when QAing mobile issues */
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-
-  .row .grid-1,
-  .row .grid-2,
-  .row .grid-3,
-  .row .grid-4 {
-    width: 48.2% !important;
-  }
-}
-
-/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
 body,
 html {
   height: 100%;
@@ -752,8 +714,8 @@ header.header div.header__bar.row {
 }
 
 header.header div.header__bar.row h1.grid-6 {
-  font-size: 20px;
-  line-height: 41px;
+  /* font-size: 20px;
+  line-height: 41px; */
   float: left;
 }
 
@@ -881,7 +843,7 @@ div.contents.row div.content_post:after {
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FFA60000');
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC44NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
+  background-image: webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
   background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
@@ -1089,9 +1051,60 @@ footer p {
   body
   /* footer */
   {
-    color: #e4e4e4;
-    background-color: #444;
-    transition: .5s;
-    }
+  color: #e4e4e4;
+  background-color: #444;
+  transition: .5s;
+  }
+}
+
+
+/* iPhone7 iPhoneは若者(20代がピーク)が多く、iPhone7が一番多い2020年 */
+@media only screen and (max-width: 375px) {
+
+  .row {
+    width: 100%;
+    padding: 0 20px !important;
   }
   
+  .row .grid-1,
+  .row .grid-2,
+  .row .grid-3,
+  .row .grid-4,
+  .row .grid-5,
+  .row .grid-6,
+  .row .grid-7,
+  .row .grid-8,
+  .row .grid-9,
+  .row .grid-10,
+  .row .grid-11,
+  .row .grid-12 {
+      float: none;
+      /* width: 100% !important;
+      margin: 0 !important; */
+      position: static !important;
+  }
+  
+  .row .grid-1,
+  .row .grid-2,
+  .row .grid-3,
+  .row .grid-4 {
+      width: 48.2% !important;
+  }
+  
+  .btn, header.header div.header__bar.row div.grid-6 a.post {
+    padding: 0px 0px;
+    font-size: 14px;
+    border: 2px solid #57C3E9;
+    color: #57C3E9;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  
+  header.header div.header__bar.row div.grid-6 a.post {
+    width: 120px;
+    display: inline;
+    }
+  }
+  /* iPhone7 iPhoneは若者(20代がピーク)が多く、iPhone7が一番多い2020年 */
