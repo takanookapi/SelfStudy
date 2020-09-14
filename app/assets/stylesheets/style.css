@@ -510,7 +510,7 @@ ul li {
 }
 
 .row .grid-6 {
-  width: 48.2%;
+  /* width: 40.2%; */
 }
 
 .row .grid-7 {
@@ -1009,7 +1009,7 @@ form input[type="submit"]:hover {
   margin: 20px 0;
   padding: 30px;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
+  /* background-color: white; */
   box-sizing: border-box;
 }
 
@@ -1057,3 +1057,41 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+
+:root{
+  --main-text: #444;
+  --main-bg: #e4e4e4;
+}
+
+.light-theme{
+  background-color: #fff;
+  color: #333;
+  transition: .5s;
+}
+
+.dark-theme {
+  background-color: #444;
+  color: #e4e4e4;
+  transition: .5s;
+}
+
+@media (prefers-color-scheme: dark){
+  a,
+  /* em, */
+  /* #btn-mode, */
+  /* #user_email,
+  #user_name,
+  #user_password,
+  #user_password_confirmation,
+  .container, */
+  header.header,
+  body
+  /* footer */
+  {
+    color: #e4e4e4;
+    background-color: #444;
+    transition: .5s;
+    }
+  }
+  

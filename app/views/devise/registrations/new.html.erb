@@ -1,17 +1,17 @@
 <div class="contents row">
-  <div class="container">
+  <div class="container " id="aiu">
     <h2>Sign up</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
 
       <div class="field">
         <%= f.label :name %> <em>(6 characters maximum)</em><br />
-        <%= f.text_field :name, autofocus: true, maxlength: "6"%>
+        <%= f.text_field :name,  class:"dark-theme" ,autofocus: true, maxlength: "6"%>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email ,class:"dark-theme"%>
       </div>
 
       <div class="field">
@@ -19,12 +19,12 @@
         <% if @validatable %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, class:"dark-theme" , autocomplete: "off" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation,  class:"dark-theme" ,autocomplete: "off" %>
       </div>
 
       <div class="field">
@@ -54,6 +54,41 @@
       }
     }, false);
     
+
+  // チェックした時の挙動
+    var names = document.getElementById('user_name');
+    var email = document.getElementById('user_email');
+    var pass = document.getElementById('user_password');
+    var passcom = document.getElementById('user_password_confirmation');
+    var container = document.getElementById('aiu');
+    btn_b.addEventListener("change", () => {
+      if (btn_b.checked == true) {
+  // ダークモード
+    pass.classList.remove("light-theme");
+    pass.classList.add("dark-theme");
+    passcom.classList.remove("light-theme");
+    passcom.classList.add("dark-theme");
+    container.classList.remove("light-theme");
+    container.classList.add("dark-theme");
+    email.classList.remove("light-theme");
+    email.classList.add("dark-theme");
+    names.classList.remove("light-theme");
+    names.classList.add("dark-theme");
+      } else {
+  // ライトモード
+    pass.classList.remove("dark-theme");
+    pass.classList.add("light-theme");
+    passcom.classList.remove("dark-theme");
+    passcom.classList.add("light-theme");
+    container.classList.remove("dark-theme");
+    container.classList.add("light-theme");
+    email.classList.remove("dark-theme");
+    email.classList.add("light-theme");
+    names.classList.remove("dark-theme");
+    names.classList.add("light-theme");
+  }
+});
+
 </script>
 
   </div>

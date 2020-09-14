@@ -7,14 +7,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">SelfStudy</a></h1>
+    <header class="header" id="abc">
+      <div class="header__bar row"> 
+        <h1 class="grid-6"><a href="/">SelfStudy</a></h1> 
+          <input id="btn-mode" type="checkbox" checked="checked">ダークモード       
           <% if user_signed_in? %>
             <div class="user_nav grid-6">
           <span><%= current_user.name %>
-            <ul class="user__info">
+            <ul class="user_info">
               <li>
                 <%= link_to "時間記録", "/" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -31,11 +33,43 @@
       </div>
       </div>
     </header>
-    <%= yield %>
-    <footer>
+
+<script>
+
+  // チェックした時の挙動
+    var btn_b = document.getElementById("btn-mode");
+    var footer = document.getElementById('dark_light_change2');
+    var head_1 = document.getElementById('abc');
+    btn_b.addEventListener("change", () => {
+      if (btn_b.checked == true) {
+  // ダークモード
+    document.body.classList.remove("light-theme");
+    document.body.classList.add("dark-theme");
+    footer.classList.remove("light-theme");
+    footer.classList.add("dark-theme");
+    head_1.classList.remove("light-theme");
+    head_1.classList.add("dark-theme");
+      } else {
+  // ライトモード
+    document.body.classList.remove("dark-theme");
+    document.body.classList.add("light-theme");
+    footer.classList.remove("dark-theme");
+    footer.classList.add("light-theme");
+    head_1.classList.remove("dark-theme");
+    head_1.classList.add("light-theme");
+      }
+
+});
+
+  </script>
+
+  <%= yield %>
+  </body>
+
+  <footer id="dark_light_change2">
       <p>
         Copyright SelfStudy 2020.
       </p>
-    </footer>
-  </body>
+  </footer>
+
 </html>
