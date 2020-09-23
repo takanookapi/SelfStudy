@@ -1,0 +1,8 @@
+<div class="contents row">
+  <div class="container">
+    <%= form_with(model: @time_report, local: true) do |f| %>
+      <h3>記録する</h3>
+        <%= render partial: "f", locals: { f: f } %>
+    <% end %>
+  </div>
+</div>

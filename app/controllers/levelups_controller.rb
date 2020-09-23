@@ -1,0 +1,2 @@
+class LevelupsController < ApplicationController
+end

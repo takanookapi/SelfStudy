@@ -600,7 +600,7 @@ ul li {
 body,
 html {
   height: 100%;
-  background-color: #f5f5f3;
+  /* background-color: #f5f5f3; */
 }
 
 body {
@@ -700,7 +700,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 header.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
-  background-color: #fff;
+  /* background-color: #fff; */
   position: fixed;
   top: 0;
   left: 0;
@@ -774,7 +774,7 @@ header.header .user_nav ul {
 }
 
 header.header .user_nav ul li {
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
 }
 
 header.header .user_nav ul li a {
@@ -997,7 +997,7 @@ form input[type="submit"]:hover {
 }
 
 footer {
-  margin: 30px auto;
+  /* margin: 30px auto; */
   padding: 10px;
   color: #D8D8D8;
 }
@@ -1038,24 +1038,22 @@ footer p {
   transition: .5s;
 }
 
-@media (prefers-color-scheme: dark){
-  a,
-  /* em, */
-  /* #btn-mode, */
-  /* #user_email,
+/* @media (prefers-color-scheme: dark){
+  em,
+  #btn-mode,
+  #user_email,
   #user_name,
   #user_password,
   #user_password_confirmation,
-  .container, */
+  .container,
   header.header,
-  body
-  /* footer */
-  {
+  body{
+  footer
   color: #e4e4e4;
   background-color: #444;
   transition: .5s;
   }
-}
+} */
 
 
 /* iPhone7 iPhoneは若者(20代がピーク)が多く、iPhone7が一番多い2020年 */
@@ -1108,3 +1106,188 @@ footer p {
     }
   }
   /* iPhone7 iPhoneは若者(20代がピーク)が多く、iPhone7が一番多い2020年 */
+
+
+
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, 
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12, 
+.col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, 
+.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, 
+.col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, 
+.col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto {
+  width: 100%;
+  padding: 12px;
+}
+
+div {
+  display: block;
+}
+
+.theme--light.v-application {
+  background: #fff;
+  color: rgba(0,0,0,.87);
+}
+
+.v-application {
+  font-family: Roboto,sans-serif;
+  line-height: 1.5;
+}
+
+.v-sheet.v-card:not(.v-sheet--outlined) {
+  box-shadow: 
+  0 3px 1px -2px rgba(0,0,0,.2), 
+  0 2px 2px 0 rgba(0,0,0,.14), 
+  0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.theme--light.v-sheet {
+  background-color: #fff;
+  border-color: #fff;
+  color: rgba(0,0,0,.87);
+}
+
+.v-sheet.v-card {
+  border-radius: 4px;
+}
+
+.v-card {
+  border-width: thin;
+  display: block;
+  max-width: 100%;
+  outline: none;
+  text-decoration: none;
+  transition-property: box-shadow,opacity;
+  word-wrap: break-word;
+  position: relative;
+  white-space: normal;
+}
+
+#experience-row {
+  padding: 20px;
+}
+
+.v-card>.v-card__progress+:not(.v-btn):not(.v-chip), .v-card>:first-child:not(.v-btn):not(.v-chip) {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.v-application .amber--text.text--lighten-1 {
+  color: #FF4F02!important;
+  caret-color: #FF4F02!important;
+}
+
+#level,
+#exp,
+#total-exp,
+#current-level,
+.progress-proportion
+{
+  color: #FF4F02!important;
+  caret-color: #FF4F02!important;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+h2 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.v-application .justify-center {
+  justify-content: center!important;
+}
+
+.vuejs-heatmap .calendar-heatmap {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: initial;
+  box-sizing: initial;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+svg {
+  width: 750;
+  height: 130;
+}
+
+.container_x {
+  width: 100%;
+  padding: 12px;
+  display:flex;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mx-auto {
+  justify-content: center;
+  align-items: center;
+}
+
+.time-report-card {
+  padding: 20px;
+  margin: 12px;
+  width: 600px;
+}
+
+.v-sheet.v-card {
+  border-radius: 4px;
+}
+
+element.style {
+  color: inherit;
+  text-decoration: none;
+}
+
+.v-application a {
+  cursor: pointer;
+}
+
+element.style {
+  display: inline-block;
+}
+
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+#nan {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+

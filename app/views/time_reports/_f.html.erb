@@ -1,0 +1,109 @@
+      <%= render 'layouts/error_messages', model: f.object %>
+      <%= f.label :start_at, '学習日時' %>
+      <%= f.datetime_field :study_date, class:"dark-theme" ,id:"item-image"%>
+      <%= f.label :start_at_time, '学習時間' %>
+      <div class="content">
+      <%= f.select :study_time, [["選択", 0],["0:30", 0.5],["1:00", 1.0],["1:30", 1.5],["2:00", 2.0],["2:30", 2.5],["3:00", 3.0],["3:30", 3.5],["4:00", 4.0],["4:30", 4.5],["5:00", 5.0],["5:30", 5.5],["6:00", 6.0],["6:30", 6.5],["7:00", 7.0],["7:30", 7.5],["8:00", 8.0],["8:30", 8.5],["9:00", 9.0],["9:30", 9.5],["10:00", 10.0],["10:30", 10.5],["11:00", 11.0],["11:30", 11.5],["12:00", 12.0],["12:30", 12.5],["13:00", 13.0],["13:30", 13.5],["14:00", 14.0],["14:30", 14.5],["15:00", 15.0],["15:30", 15.5],["16:00", 16.0],["16:30", 16.5],["17:00", 17.0],["17:30", 17.5],["18:00", 18.0]],class:"dark-theme"%>
+      <%= f.label :start_at_time, '*上記と同時間入力' %>
+      <%= f.select :exp,[["時間を選択", 0],["0:30", 30],["1:00", 60],["1:30", 90],["2:00", 120],["2:30", 150],["3:00", 180],["3:30", 210],["4:00", 240],["4:30", 270],["5:00", 300],["5:30", 330],["6:00", 360],["6:30", 390],["7:00", 420],["7:30", 450],["8:00", 480],["8:30", 510],["9:00", 540],["9:30", 570],["10:00", 600],["10:30", 630],["11:00", 660],["11:30", 690],["12:00", 720],["12:30", 750],["13:00", 780],["13:30", 810],["14:00",840],["14:30", 870],["15:00", 900],["15:30", 930],["16:00", 960],["16:30", 990],["17:00", 1020],["17:30", 1050],["18:00", 1080]], class:"dark-theme"%>
+      </div>
+      <%= f.text_area :memo, class:"items-text dark-theme" ,id:"item-image3",placeholder: "メモ/学習内容" ,rows: "10" %>
+      <%= f.submit "保存" %>
+
+  <script>
+
+  var now = new Date();
+  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+  document.getElementById('item-image').value = now.toISOString().slice(0, -8);
+
+onload();
+
+  
+    // チェックした時の挙動
+    var btn_b = document.getElementById("btn-mode");
+
+    btn_b.addEventListener("change", () => {
+      if (btn_b.checked == true) {
+        document.cookie = 'bgcolor=dark; path=/'; 
+  // ダークモード
+    dark();
+      } else {
+        document.cookie = 'bgcolor=light; path=/';
+  // ライトモード
+    light();
+      }
+});
+
+function dark (){
+  // チェックした時の挙動
+    var footer = document.getElementById('dark_light_change2');
+    var head_1 = document.getElementById('abc');
+    var study = document.getElementById('item-image');
+    var study2 = document.getElementById('time_report_study_time');
+    var study3 = document.getElementById('item-image3');
+    var study4 = document.getElementById('time_report_exp');
+    var tag1 = document.getElementById('tag1');
+  // ダークモード
+    tag1.classList.remove("light-theme");
+    tag1.classList.add("dark-theme");
+    footer.classList.remove("light-theme");
+    footer.classList.add("dark-theme");
+    head_1.classList.remove("light-theme");
+    head_1.classList.add("dark-theme");
+    document.body.classList.remove("light-theme");
+    document.body.classList.add("dark-theme");
+    study.classList.remove("light-theme");
+    study.classList.add("dark-theme");
+    study2.classList.remove("light-theme");
+    study2.classList.add("dark-theme");
+    study3.classList.remove("light-theme");
+    study3.classList.add("dark-theme");
+    study4.classList.remove("light-theme");
+    study4.classList.add("dark-theme");
+}
+
+function light(){
+    var tag1 = document.getElementById('tag1');
+    var footer = document.getElementById('dark_light_change2');
+    var head_1 = document.getElementById('abc');
+    var study = document.getElementById('item-image');
+    var study2 = document.getElementById('time_report_study_time');
+    var study3 = document.getElementById('item-image3');
+    var study4 = document.getElementById('time_report_exp');
+  // ライトモード
+    tag1.classList.remove("dark-theme");
+    tag1.classList.add("light-theme");
+    footer.classList.remove("dark-theme");
+    footer.classList.add("light-theme");
+    head_1.classList.remove("dark-theme");
+    head_1.classList.add("light-theme");
+    document.body.classList.remove("dark-theme");
+    document.body.classList.add("light-theme");
+    study.classList.remove("dark-theme");
+    study.classList.add("light-theme");
+    study2.classList.remove("dark-theme");
+    study2.classList.add("light-theme");
+    study3.classList.remove("dark-theme");
+    study3.classList.add("light-theme");
+    study4.classList.remove("dark-theme");
+    study4.classList.add("light-theme");
+}
+
+
+function onload(){
+  var btn_b = document.getElementById("btn-mode");
+  var cookies = document.cookie;
+  var position = cookies.indexOf('light');
+  if(cookies.indexOf('light')!=-1){
+    light();
+    btn_b.checked = false;
+  }else{
+    dark();
+    btn_b.checked = true;
+  }
+  // alert(btn_b.checked)
+}
+
+
+  </script>
+

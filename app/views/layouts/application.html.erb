@@ -9,26 +9,27 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body onload ="onload();">
     <header class="header" id="abc">
       <div class="header__bar row"> 
-        <h1 class="grid-6"><a href="/">SelfStudy</a></h1> 
-      <input id="btn-mode" type="checkbox" checked="checked">ダークモード
+        <h1 class="grid-6">
+        <a href="javascript:OnLinkClick();" id="tag1">SelfStudy</a></h1> 
+      <input id="btn-mode" type="checkbox">ダークモード
           <% if user_signed_in? %>
             <div class="user_nav grid-6">
           <span><%= current_user.name %>
             <ul class="user_info">
               <li>
-                <%= link_to "時間記録", "/" %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                <%= link_to "時間記録" ,new_time_report_path, class:"dark-theme" ,id:"tag2"%>
+                <%= link_to "ログアウト" ,destroy_user_session_path, method: :delete ,class:"dark-theme" ,id:"tag3"%>
               </li>
             </ul>
           </span>
             </div>
           <% else %>
             <div class="grid-6">
-              <%= link_to "ログイン", new_user_session_path, class: "post" %>
-              <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+              <%= link_to "ログイン", new_user_session_path,  class: "post"%>
+              <%= link_to "新規登録", new_user_registration_path, class: "post"%>
             </div>
           <% end %>
       </div>
@@ -37,40 +38,89 @@
 
 <script>
 
+
+function OnLinkClick(){
+  // onload();
+  window.location.href = '/';
+}
+
   // チェックした時の挙動
     var btn_b = document.getElementById("btn-mode");
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
+
     btn_b.addEventListener("change", () => {
       if (btn_b.checked == true) {
+        document.cookie = 'bgcolor=dark; path=/'; 
   // ダークモード
+    dark();
+      } else {
+        document.cookie = 'bgcolor=light; path=/';
+  // ライトモード
+    light();
+      }
+});
+
+function dark (){
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var tag1 = document.getElementById('tag1');
+  var tag2 = document.getElementById('tag2');
+  var tag3 = document.getElementById('tag3');
     document.body.classList.remove("light-theme");
     document.body.classList.add("dark-theme");
     footer.classList.remove("light-theme");
     footer.classList.add("dark-theme");
     head_1.classList.remove("light-theme");
     head_1.classList.add("dark-theme");
-      } else {
-  // ライトモード
+    tag1.classList.remove("light-theme");
+    tag1.classList.add("dark-theme");
+    tag2.classList.remove("light-theme");
+    tag2.classList.add("dark-theme");
+    tag3.classList.remove("light-theme");
+    tag3.classList.add("dark-theme");
+}
+function light(){
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var tag1 = document.getElementById('tag1');
+  var tag2 = document.getElementById('tag2');
+  var tag3 = document.getElementById('tag3');
     document.body.classList.remove("dark-theme");
     document.body.classList.add("light-theme");
     footer.classList.remove("dark-theme");
     footer.classList.add("light-theme");
     head_1.classList.remove("dark-theme");
     head_1.classList.add("light-theme");
-      }
+    tag1.classList.remove("dark-theme");
+    tag1.classList.add("light-theme");
+    tag2.classList.remove("dark-theme");
+    tag2.classList.add("light-theme");
+    tag3.classList.remove("dark-theme");
+    tag3.classList.add("light-theme");
+}
 
-});
+
+function onload(){
+  var btn_b = document.getElementById("btn-mode");
+  var cookies = document.cookie;
+  var position = cookies.indexOf('light');
+  if(cookies.indexOf('light')!=-1){
+    light();
+    btn_b.checked = false;
+  }else{
+    dark();
+    btn_b.checked = true;
+  }
+}
+
 
   </script>
 
   <%= yield %>
-  </body>
 
   <footer id="dark_light_change2">
       <p>
         Copyright SelfStudy 2020.
       </p>
   </footer>
-
+  </body>
 </html>

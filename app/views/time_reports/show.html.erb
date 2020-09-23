@@ -1,0 +1,27 @@
+  <div class="container">
+    <% if current_user.id == @time_report.user_id %>
+      <%= form_with(model: [@time_report, @comment], local: true) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+        <%= f.text_area :content, placeholder: "詳細をメモしてください", rows: "2" %>
+        <%= f.submit "保存する" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+      </strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜詳細一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= comment.user.name %>：</strong>
+            <% if user_signed_in? && current_user.id == @time_report.user_id && current_user.id == comment.user_id %>
+            <%= link_to '❌', time_report_comment_path(comment.id), method: :delete %>
+            <%= comment.content %>
+              <% end %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

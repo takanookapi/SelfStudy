@@ -1,0 +1,118 @@
+
+<div class="col-lg-8 col-12">
+  <div class="v-card v-sheet theme--light" id="top">
+    <div id="experience-row" class="row">
+      <div class="col col-6 amber--text text--lighten-1">
+        <div class="row justify-center">
+          <span id="current-level">現在のLv:</span>
+        </div>
+        <div class="row justify-center">
+          <h2 id="level"><%=current_user.level%></h2>
+          <div class="progress-proportion col-lg-2 col-2"><p>Lv NowLoding...
+            <progress max="100">待機中</progress></div>
+        </div>
+      </div>
+      <div class="col col-6 amber--text text--lighten-1">
+        <div class="row justify-center">
+          <span id="total-exp">合計勉強時間:</span>
+        </div>
+        <div class="row justify-center">
+          <h2 id="exp"><%=current_user.sum_time%>時間</h2>
+        </div>
+      </div>
+    </div> 
+    <div class="row justify-center align-content-center" id="experience-progress-linear">
+      <div id="left-blank" class="col-lg-1 col">
+      </div>
+        <div id="progress-linear" class="col-lg-8 col-9">
+          <div role="progressbar" class="v-progeress-linear theme--light">
+            <div class="v-progress-linear__background primary"></div>
+            <div class="v-progress-linear__buffer"></div>
+            <div class="v-progress-linear__determinate primary"></div>
+          </div>
+        </div>
+    </div>
+    </div>
+  <div>
+
+  <% @time_reports.each do |time_report| %>
+  <div class="container_x" id="top_2">
+    <div class="mx-auto time-report-card v-card v-sheet theme--light" id="ing">
+      <div class="v-card__tilte">
+        <div class="name">
+            <div class="more">
+              <span><%= image_tag 'arrow_top.png' %></span>
+                <ul class="more_list">
+                  <li>
+                    <%= link_to '編集', edit_time_report_path(time_report.id), method: :get %>
+                  </li>
+                  <li>
+                    <%= link_to '削除', time_report_path(time_report.id), method: :delete %>
+                  </li>
+                </ul>
+            </div>
+      <div class="v-card__text">
+        <div class="row study-date-row">
+          <p><h3>📆学習日付</h3><%= time_report.study_date%></p>
+        <%# <%= link_to  "#" ,show_time_report_path(time_report.id), method: :get%> 
+          <div class="row time-reporttag-row"></div>
+            <div class="row">
+              <div class="study-time-col col">
+              <p><h3>⏰学習時間</h3>
+              <%= time_report.study_time%>時間</p>
+              </div>
+              <div class="experience-point-col col">
+              <%# #experience %>
+              <p><h3>✨EXP</h3><%= %></p>
+              </div>
+            </div>
+          </div>
+        <div class="row time-report-footer">
+          <div class="comment">
+          <p>📖メモ:<%= time_report.memo%></p>
+          </div>
+        </div>
+        <div class="row time-report-footer">
+          <div class="comments">
+      <h4>＜詳細メモへ移動＞</h4>
+      <%=link_to "💬",  time_report_path(time_report.id), method: :get  %>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  </div>
+</div>
+
+<script>
+
+  // チェックした時の挙動
+    var index2 = document.getElementById('top');
+    var index3 = document.getElementById('top_2');
+    var index5 = document.getElementById('ing');
+    btn_b.addEventListener("change", () => {
+      if (btn_b.checked == true) {
+  // ダークモード
+    index2.classList.remove("light-theme");
+    index2.classList.add("dark-theme");
+    index3.classList.remove("light-theme");
+    index3.classList.add("dark-theme");
+    index5.classList.remove("light-theme");
+    index5.classList.add("dark-theme");
+      } else {
+  // ライトモード
+
+    index2.classList.remove("dark-theme");
+    index2.classList.add("light-theme");
+    index3.classList.remove("dark-theme");
+    index3.classList.add("light-theme");
+    index5.classList.remove("dark-theme");
+    index5.classList.add("light-theme");
+  }
+});
+
+
+</script>
