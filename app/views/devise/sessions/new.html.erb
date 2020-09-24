@@ -23,7 +23,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <%= f.submit "ログイン" %>
       </div>
     <% end %>
 
@@ -40,32 +40,25 @@
     }, false);
 
 onload();
-
-  
-    // チェックした時の挙動
-    var btn_b = document.getElementById("btn-mode");
-
+  var btn_b = document.getElementById("btn-mode");
     btn_b.addEventListener("change", () => {
       if (btn_b.checked == true) {
         document.cookie = 'bgcolor=dark; path=/'; 
-  // ダークモード
     dark();
       } else {
         document.cookie = 'bgcolor=light; path=/';
-  // ライトモード
     light();
       }
 });
 
-function dark (){
-  // チェックした時の挙動
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
-    var pass = document.getElementById('user_password');
-    var email = document.getElementById('user_email');
-    var container = document.getElementById('aiu');
-    var tag1 = document.getElementById('tag1');
   // ダークモード
+function dark (){
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var pass = document.getElementById('user_password');
+  var email = document.getElementById('user_email');
+  var container = document.getElementById('aiu');
+  var tag1 = document.getElementById('tag1');
     footer.classList.remove("light-theme");
     footer.classList.add("dark-theme");
     head_1.classList.remove("light-theme");
@@ -82,14 +75,14 @@ function dark (){
     tag1.classList.add("dark-theme");
 } 
 
-function light(){
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
-    var pass = document.getElementById('user_password');
-    var email = document.getElementById('user_email');
-    var container = document.getElementById('aiu');
-    var tag1 = document.getElementById('tag1');
   // ライトモード
+function light(){
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var pass = document.getElementById('user_password');
+  var email = document.getElementById('user_email');
+  var container = document.getElementById('aiu');
+  var tag1 = document.getElementById('tag1');
     footer.classList.remove("dark-theme");
     footer.classList.add("light-theme");
     head_1.classList.remove("dark-theme");

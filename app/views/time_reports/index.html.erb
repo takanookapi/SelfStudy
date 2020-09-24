@@ -62,8 +62,8 @@
               <%= time_report.study_time%>時間</p>
               </div>
               <div class="experience-point-col col">
-              <%# #experience %>
               <p><h3>✨EXP</h3><%= %></p>
+              <%= time_report.exp%>経験値</p>
               </div>
             </div>
           </div>
@@ -87,12 +87,12 @@
   </div>
 </div>
 
+
 <script>
 
-  // チェックした時の挙動
-    var index2 = document.getElementById('top');
-    var index3 = document.getElementById('top_2');
-    var index5 = document.getElementById('ing');
+  var index2 = document.getElementById('top');
+  var index3 = document.getElementById('top_2');
+  var index5 = document.getElementById('ing');
     btn_b.addEventListener("change", () => {
       if (btn_b.checked == true) {
   // ダークモード
@@ -104,7 +104,6 @@
     index5.classList.add("dark-theme");
       } else {
   // ライトモード
-
     index2.classList.remove("dark-theme");
     index2.classList.add("light-theme");
     index3.classList.remove("dark-theme");
@@ -113,6 +112,5 @@
     index5.classList.add("light-theme");
   }
 });
-
 
 </script>

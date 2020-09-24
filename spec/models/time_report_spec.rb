@@ -23,5 +23,4 @@ end
   end
 end
 
-# いつでもテストコード起動のコピペ用
 # bundle exec rspec spec/models/time_report_spec.rb

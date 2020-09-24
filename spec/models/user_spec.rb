@@ -64,7 +64,4 @@ RSpec.describe User, type: :model do
   end
 end
 
-# いつでもテストコード起動のコピペ用
 # bundle exec rspec spec/models/user_spec.rb
-
-# rails g rspec:model users ⬅︎これで作成

@@ -51,6 +51,7 @@ class TimeReportsController < ApplicationController
   end
 
   def show
+    redirect_to new_user_session_path unless user_signed_in?
     @time_report = TimeReport.find(params[:id])
     @comment = Comment.new
     @comments = @time_report.comments.includes(:user)

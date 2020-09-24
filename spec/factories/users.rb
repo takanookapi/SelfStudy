@@ -4,8 +4,8 @@ FactoryBot.define do
     email                 { Faker::Internet.free_email }
     password              {Faker::Internet.password(min_length: 6)}
     password_confirmation {password}
-    # exp_point             { Faker::Number.number }
-    # sum_time              { Faker::Number.number }
-    # level                 { Faker::Number.number }
+    exp_point             { '60'}
+    sum_time              { '20' }
+    level                 { '10' }
   end
 end

@@ -17,33 +17,26 @@
   document.getElementById('item-image').value = now.toISOString().slice(0, -8);
 
 onload();
-
-  
-    // チェックした時の挙動
-    var btn_b = document.getElementById("btn-mode");
-
+  var btn_b = document.getElementById("btn-mode");
     btn_b.addEventListener("change", () => {
       if (btn_b.checked == true) {
         document.cookie = 'bgcolor=dark; path=/'; 
-  // ダークモード
     dark();
       } else {
         document.cookie = 'bgcolor=light; path=/';
-  // ライトモード
     light();
       }
 });
 
-function dark (){
-  // チェックした時の挙動
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
-    var study = document.getElementById('item-image');
-    var study2 = document.getElementById('time_report_study_time');
-    var study3 = document.getElementById('item-image3');
-    var study4 = document.getElementById('time_report_exp');
-    var tag1 = document.getElementById('tag1');
   // ダークモード
+function dark (){
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var study = document.getElementById('item-image');
+  var study2 = document.getElementById('time_report_study_time');
+  var study3 = document.getElementById('item-image3');
+  var study4 = document.getElementById('time_report_exp');
+  var tag1 = document.getElementById('tag1');
     tag1.classList.remove("light-theme");
     tag1.classList.add("dark-theme");
     footer.classList.remove("light-theme");
@@ -62,15 +55,15 @@ function dark (){
     study4.classList.add("dark-theme");
 }
 
-function light(){
-    var tag1 = document.getElementById('tag1');
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
-    var study = document.getElementById('item-image');
-    var study2 = document.getElementById('time_report_study_time');
-    var study3 = document.getElementById('item-image3');
-    var study4 = document.getElementById('time_report_exp');
   // ライトモード
+function light(){
+  var tag1 = document.getElementById('tag1');
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var study = document.getElementById('item-image');
+  var study2 = document.getElementById('time_report_study_time');
+  var study3 = document.getElementById('item-image3');
+  var study4 = document.getElementById('time_report_exp');
     tag1.classList.remove("dark-theme");
     tag1.classList.add("light-theme");
     footer.classList.remove("dark-theme");
@@ -101,7 +94,6 @@ function onload(){
     dark();
     btn_b.checked = true;
   }
-  // alert(btn_b.checked)
 }
 
 

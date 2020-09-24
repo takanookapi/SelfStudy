@@ -2,7 +2,7 @@
     <% if current_user.id == @time_report.user_id %>
       <%= form_with(model: [@time_report, @comment], local: true) do |f| %>
         <%= render 'layouts/error_messages', model: f.object %>
-        <%= f.text_area :content, placeholder: "詳細をメモしてください", rows: "2" %>
+        <%= f.text_area :content, placeholder: "詳細をメモしてください", rows: "2",class:"dark-theme" %>
         <%= f.submit "保存する" %>
       <% end %>
     <% else %>
@@ -25,3 +25,20 @@
     </div>
   </div>
 </div>
+
+<script>
+
+  var comment = document.getElementById('comment_content');
+    btn_b.addEventListener("change", () => {
+      if (btn_b.checked == true) {
+  // ダークモード
+    comment.classList.remove("light-theme");
+    comment.classList.add("dark-theme");
+      } else {
+  // ライトモード
+    comment.classList.remove("dark-theme");
+    comment.classList.add("light-theme");
+  }
+});
+
+</script>

@@ -35,7 +35,7 @@
       
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録" %>
       </div>
     <% end %>
 
@@ -54,35 +54,28 @@
       }
     }, false);
 
-    onload();
-
-  
-    // チェックした時の挙動
-    var btn_b = document.getElementById("btn-mode");
-
+onload();
+  var btn_b = document.getElementById("btn-mode");
     btn_b.addEventListener("change", () => {
       if (btn_b.checked == true) {
         document.cookie = 'bgcolor=dark; path=/'; 
-  // ダークモード
     dark();
       } else {
         document.cookie = 'bgcolor=light; path=/';
-  // ライトモード
     light();
       }
 });
 
-    
+// ダークモード
 function dark (){
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
-    var tag1 = document.getElementById('tag1');
-    var names = document.getElementById('user_name');
-    var email = document.getElementById('user_email');
-    var pass = document.getElementById('user_password');
-    var passcom = document.getElementById('user_password_confirmation');
-    var container = document.getElementById('aiu');
-  // ダークモード
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var tag1 = document.getElementById('tag1');
+  var names = document.getElementById('user_name');
+  var email = document.getElementById('user_email');
+  var pass = document.getElementById('user_password');
+  var passcom = document.getElementById('user_password_confirmation');
+  var container = document.getElementById('aiu');
     document.body.classList.remove("light-theme");
     document.body.classList.add("dark-theme");
     footer.classList.remove("light-theme");
@@ -103,16 +96,16 @@ function dark (){
     names.classList.add("dark-theme");
 }
 
-function light(){
-    var footer = document.getElementById('dark_light_change2');
-    var head_1 = document.getElementById('abc');
-    var tag1 = document.getElementById('tag1');
-    var names = document.getElementById('user_name');
-    var email = document.getElementById('user_email');
-    var pass = document.getElementById('user_password');
-    var passcom = document.getElementById('user_password_confirmation');
-    var container = document.getElementById('aiu');
   // ライトモード
+function light(){
+  var footer = document.getElementById('dark_light_change2');
+  var head_1 = document.getElementById('abc');
+  var tag1 = document.getElementById('tag1');
+  var names = document.getElementById('user_name');
+  var email = document.getElementById('user_email');
+  var pass = document.getElementById('user_password');
+  var passcom = document.getElementById('user_password_confirmation');
+  var container = document.getElementById('aiu');
     document.body.classList.remove("dark-theme");
     document.body.classList.add("light-theme");
     footer.classList.remove("dark-theme");
@@ -146,6 +139,7 @@ function onload(){
     btn_b.checked = true;
   }
 }
+
 </script>
 
   </div>
