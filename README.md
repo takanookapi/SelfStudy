@@ -58,7 +58,7 @@ Password: 1234aa</br>
 
 GIF説明
 ----------------
-<a href="https://gyazo.com/f7463c2faca1b625bd754dd7f17c1c49">パスワード表示</a>
+![demo](https://gyazo.com/f7463c2faca1b625bd754dd7f17c1c49)
 
 実装予定機能
 ----------------
