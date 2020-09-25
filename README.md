@@ -113,7 +113,7 @@ DB図
 
 ローカル動作方法
 ----------------
-1)$ git clone https://github.com/takanookapi/SelfStudy.git
+1)$ git clone https://github.com/takanookapi/SelfStudy.git</br>
 2)$ ruby -v
 3)$ rails -v
 4)$ bundle install
