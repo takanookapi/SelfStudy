@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_09_21_080329) do
     t.string "email", default: "", null: false
     t.integer "level", default: 1
     t.integer "exp_point", default: 0
-    t.float "sum_time"
+    t.float "sum_time", default: 0.0
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

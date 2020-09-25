@@ -8,7 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string  :email,              null: false, default: ""
       t.integer :level,              default: 1
       t.integer :exp_point,          default: 0
-      t.float   :sum_time
+      t.float   :sum_time,           default: 0
       t.string  :encrypted_password, null: false, default: ""
 
       ## Recoverable
