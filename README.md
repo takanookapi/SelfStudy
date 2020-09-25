@@ -1,13 +1,16 @@
 アプリケーション名
 ----------------
 
-- 概要
+概要
+----------------
 （アプリケーションでできること）
 
-- ##URL
+URL
+----------------
 https://selfstudy-29216.herokuapp.com/
 
-- テスト用アカウント
+テスト用アカウント
+----------------
 ○Basic認証
 ID/Pass
 ID: stustu
@@ -17,12 +20,15 @@ Name:TEST
 メールアドレス: 1111@yahoo.co.jp
 パスワード: 1234aa
 
-- 利用方法
+-利用方法
+----------------
 
-- 課題解決
+課題解決
+----------------
 (このアプリケーションを通じて、どのような人、どのような課題を解決したかったかの記述)
 
-- 洗い出した要件
+洗い出した要件
+----------------
 |実装機能        |要件
 |---------------|---------------------------------------------------------|
 |ログイン機能     |・新規登録できるようにする。                                  |
@@ -44,10 +50,12 @@ i)ログインできるようにする。
 ###③Basic認証
 ###③デプロイ
 
-- GIF説明
+GIF説明
+----------------
 (機能ごとのGIF)
 
-- 実装予定機能
+実装予定機能
+----------------
 ①10月までに"Vue.js"と"Nuxt.js"を利用して"SPA"の実装
 ②11月までに以下の2点の実装
 i)経験値バーに動きをつける
@@ -58,9 +66,10 @@ ii)いいね機能
 iii)勉強時間ランキング機能
 iv)プライベートメッセージ機能
 
-- DB図
+DB図
+----------------
 (ER図<Github> )
-## users テーブル
+### users テーブル
 | Column          | Type     | Options                        |
 | --------------  | -------  | ------------------------------ |
 | name            | string   | null: false                    |
@@ -71,12 +80,12 @@ iv)プライベートメッセージ機能
 | exp_point       | int      | default: 0                     |
 | sum_time:float  | float    |                                |
 
-### Association
+#### Association
 - has_many :time_reports
 - has_many :comments
 
 
-## time_reports テーブル
+### time_reports テーブル
 | Column            | Type    | Options                       |
 | ----------------- | ------- | ----------------------------- |
 | user_id           | integer | null: false, foreign_key: true| 
@@ -85,24 +94,25 @@ iv)プライベートメッセージ機能
 | memo              | text    | null: false                   |
 | exp               | int     |                               |
 
-### Association
+#### Association
 - belongs_to :user
 - has_many :comments
 
 
-## comments テーブル
+### comments テーブル
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | user_id        | integer    | null:false, foreign_key: true  |
 | time_report_id | integer    | null:false, foreign_key: true  |
 | content        | text       | null:false                     |
 
-### Association
+#### Association
 - has_one    :sell_item
 - belongs_to :user
 
 
-- ローカル動作方法
+ローカル動作方法
+----------------
 1)$ git clone https://github.com/takanookapi/SelfStudy.git
 2)$ ruby -v
 3)$ rails -v
@@ -112,7 +122,8 @@ iv)プライベートメッセージ機能
 7)$ rails s
 8)  http://localhost:3000
 
-- 開発環境
+開発環境
+----------------
 Ruby 2.6.5
 Rails 6.0.3.3
 HTML/CSS/Javascript
