@@ -68,6 +68,8 @@ GIF説明
 画面遷移図/DB図/テーブル表
 ----------------
 - 画面遷移図
+![自己学習機能DB設計図](https://user-images.githubusercontent.com/69524194/94257665-9a60be80-ff66-11ea-8c98-17bd623f42f9.jpg)
+
 
 - ER図
 ![自己学習機能DB設計図](https://user-images.githubusercontent.com/69524194/94257665-9a60be80-ff66-11ea-8c98-17bd623f42f9.jpg)
