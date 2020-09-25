@@ -31,10 +31,9 @@ Name:TEST
 ----------------
 |実装機能        |要件
 |---------------|---------------------------------------------------------|
-|ログイン機能     |・新規登録できるようにする。                                  |
-|               |・ログインしている人は新規登録はできないようにする。              |
-|               |・名前・email・password・password-confirminationの４つで登録 |
-|               |・パスワードのチェックボックスで表示したり隠したりできる。         |
+|ログイン機能     |・新規登録できるようにする。・ログインしている人は新規登録はできないようにする。・名前/email/password/password-confirminationの4つで登録できる。・パスワードのチェックボックスで表示したり隠したりできる。                                       |
+|               |
+
 ###①ログイン機能
 目的:各個人用なので、他の人の学習と分けるために実装
 詳細:ログインと新規登録機能を実装する
@@ -56,15 +55,15 @@ GIF説明
 
 実装予定機能
 ----------------
-①10月までに"Vue.js"と"Nuxt.js"を利用して"SPA"の実装
-②11月までに以下の2点の実装
-i)経験値バーに動きをつける
-ii)LvUp機能に動きをつける
-③12月までにSNSとして機能させるために以下の2点の実装
-i)フォロー機能
-ii)いいね機能
-iii)勉強時間ランキング機能
-iv)プライベートメッセージ機能
+- ①10月までに"Vue.js"と"Nuxt.js"を利用して"SPA"の実装</br>
+- ②11月までに以下の2点の実装</br>
+    i)経験値バーに動きをつける</br>
+    ii)LvUp機能に動きをつける</br>
+- ③12月までにSNSとして機能させるために以下の2点の実装</br>
+    i)フォロー機能</br>
+    ii)いいね機能</br>
+    iii)勉強時間ランキング機能</br>
+    iv)プライベートメッセージ機能</br>
 
 DB図
 ----------------
@@ -114,20 +113,20 @@ DB図
 ローカル動作方法
 ----------------
 1)$ git clone https://github.com/takanookapi/SelfStudy.git</br>
-2)$ ruby -v
-3)$ rails -v
-4)$ bundle install
-5)$ rails db:create
-6)$ rails db:migrate
-7)$ rails s
-8)  http://localhost:3000
+2)$ ruby -v</br> #任意#
+3)$ rails -v</br> #任意#
+4)$ bundle install</br>
+5)$ rails db:create</br>
+6)$ rails db:migrate</br>
+7)$ rails s</br>
+8)  http://localhost:3000</br>
 
 開発環境
 ----------------
-Ruby 2.6.5
-Rails 6.0.3.3
-HTML/CSS/Javascript
-MySQL
-GitHub
-Heroku
-Visual Studio Code
+Ruby 2.6.5</br>
+Rails 6.0.3.3</br>
+HTML/CSS/Javascript</br>
+MySQL</br>
+GitHub</br>
+Heroku</br>
+Visual Studio Code</br>
