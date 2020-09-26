@@ -110,9 +110,9 @@ GIF説明
 | email           | string   | null: false , default: ""      |
 | password        | int      | null: false                    |
 | first_name      | int      | null: false                    |
-| level           | int      | default: 1                     |
+| level           | int      | null: false,default: 1         |
 | exp_point       | int      | default: 0                     |
-| sum_time:float  | float    | default: 0                      |
+| sum_time:float  | float    | null: false,default: 0         |
 
 #### Association
 - has_many :time_reports
