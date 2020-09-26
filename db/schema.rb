@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2020_09_21_080329) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
-    t.integer "level", default: 1
+    t.integer "level", default: 1, null: false
     t.integer "exp_point", default: 0
-    t.float "sum_time", default: 0.0
+    t.float "sum_time", default: 0.0, null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
