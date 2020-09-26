@@ -11,7 +11,7 @@
 
 URL
 ----------------
-- https://selfstudy-29216.herokuapp.com/
+- https://lvstudy.herokuapp.com/
 
 テスト用アカウント
 ----------------
