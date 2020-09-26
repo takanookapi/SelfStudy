@@ -18,10 +18,10 @@ class TimeReportsController < ApplicationController
   def create
     @time_report = TimeReport.new(study_datefiled_time_params)
     @user = User.find(current_user.id)
-    @user.sum_time += @time_report.study_time
-    @user.exp_point += @time_report.exp.to_i
-    @user.level = @user.exp_point.to_i / 30
-    @user.update(exp_point: @user.exp_point, level: @user.level)
+    @current_user.sum_time += @time_report.study_time
+    @current_user.exp_point += @time_report.exp.to_i
+    @current_user.level = @current_user.exp_point.to_i / 30
+    @current_user.update(exp_point: @current_user.exp_point, level: @user.level)
     if @time_report.save
       redirect_to root_path
     else
