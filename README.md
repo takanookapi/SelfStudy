@@ -123,8 +123,8 @@ GIF説明
 | Column            | Type    | Options                       |
 | ----------------- | ------- | ----------------------------- |
 | user_id           | integer | null: false, foreign_key: true| 
-| sutudy_time       | float   | null: false                   |
-| sutudy_date       | datetime| null: false                   |
+| study_time       | float   | null: false                   |
+| study_date       | datetime| null: false                   |
 | memo              | text    | null: false                   |
 | exp               | int     |                               |
 
