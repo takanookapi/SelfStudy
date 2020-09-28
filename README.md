@@ -161,7 +161,7 @@ GIF説明
 Ruby 2.6.5</br>
 Rails 6.0.3.3</br>
 HTML/CSS/Javascript</br>
-MySQL/SequelPro</br>
+MySQL 5.6.47/SequelPro 1.1.2</br>
 GitHub</br>
 Heroku</br>
-Visual Studio Code</br>
+Visual Studio Code 1.49.2</br>
