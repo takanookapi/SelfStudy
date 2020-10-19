@@ -35,6 +35,11 @@ class TimeReportsController < ApplicationController
 
   def update
     if @time_report.update(study_datefiled_time_params)
+      @user = User.find(current_user.id)
+      @user.sum_time += @time_report.study_time
+      @user.exp_point += @time_report.exp.to_i
+      @user.level = @user.exp_point.to_i / 30
+      @user.update(exp_point: @user.exp_point, level: @user.level)
       redirect_to root_path
     else
       render :edit

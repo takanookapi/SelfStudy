@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.valid?
       @comment.save
-      redirect_to  root_path
+      redirect_to "/time_reports/#{@comment.time_report.id}"
     else
-      render edit_time_report_path(@commnet.id)
+      redirect_to  "/time_reports/#{@comment.time_report.id}"
     end
   end
 
