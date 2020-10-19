@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :comments
     
   with_options presence: true do
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, {format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}  
     validates :name, length: { maximum: 6 }
   end  
-    validates :email, uniqueness: { case_sensitive: false }
 end

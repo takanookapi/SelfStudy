@@ -1,8 +1,13 @@
 class CommentsController < ApplicationController
 
   def create
-    Comment.create(comment_params)
+    @comment = Comment.new(comment_params)
+    if @comment.valid?
+      @comment.save
       redirect_to  root_path
+    else
+      render edit_time_report_path(@commnet.id)
+    end
   end
 
   def destroy
