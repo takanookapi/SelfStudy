@@ -21,6 +21,7 @@
             <ul class="user_info">
               <li>
                 <%= link_to "時間記録" ,new_time_report_path, class:"dark-theme" ,id:"tag2"%>
+                <%= link_to "アカウント編集" ,edit_user_path(current_user), class:"dark-theme" ,id:"tag4"%>
                 <%= link_to "ログアウト" ,destroy_user_session_path, method: :delete ,class:"dark-theme" ,id:"tag3"%>
               </li>
             </ul>
@@ -36,8 +37,8 @@
       </div>
     </header>
 
+  <%= yield %>
 <script>
-
 
 function OnLinkClick(){
   window.location.href = '/';
@@ -59,6 +60,7 @@ function dark (){
   var tag1 = document.getElementById('tag1');
   var tag2 = document.getElementById('tag2');
   var tag3 = document.getElementById('tag3');
+  var tag4 = document.getElementById('tag4');
     document.body.classList.remove("light-theme");
     document.body.classList.add("dark-theme");
     footer.classList.remove("light-theme");
@@ -71,6 +73,8 @@ function dark (){
     tag2.classList.add("dark-theme");
     tag3.classList.remove("light-theme");
     tag3.classList.add("dark-theme");
+    tag4.classList.remove("light-theme");
+    tag4.classList.add("dark-theme");
 }
 
 function light(){
@@ -91,6 +95,8 @@ function light(){
     tag2.classList.add("light-theme");
     tag3.classList.remove("dark-theme");
     tag3.classList.add("light-theme");
+    tag4.classList.remove("dark-theme");
+    tag4.classList.add("light-theme");
 }
 
 
@@ -110,7 +116,7 @@ function onload(){
 
   </script>
 
-  <%= yield %>
+
 
   <footer id="dark_light_change2">
       <p>

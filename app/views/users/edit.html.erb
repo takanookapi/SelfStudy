@@ -1,0 +1,12 @@
+      <%= form_with model: current_user, local: true do |f|%>
+      <%= render 'layouts/error_messages', model: f.object %>
+        <h3>アカウントの編集</h3>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :email%>
+          <%= f.email_field :email  %>
+        <div class='actions'>
+          <%= f.submit "更新", class: 'btn'%>
+        </div>
+    <% end %>
+
