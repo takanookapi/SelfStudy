@@ -15,7 +15,7 @@ URL
 
 テスト用アカウント
 ----------------
-- Basic認証(ID/Pass)</br>ID/Pass
+- Basic認証(ID/Pass)</br>
 ID: stustu</br>
 Pass: 1818</br>
 - テスト用アカウント等</br>
